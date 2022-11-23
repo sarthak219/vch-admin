@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/vch-admin/static/css/main.8ba7147d.css",
+    "main.js": "/vch-admin/static/js/main.9f39560c.js",
+    "static/media/VCH-logo.png": "/vch-admin/static/media/VCH-logo.6363e0d753fa6edf5129.png",
+    "index.html": "/vch-admin/index.html",
+    "main.8ba7147d.css.map": "/vch-admin/static/css/main.8ba7147d.css.map",
+    "main.9f39560c.js.map": "/vch-admin/static/js/main.9f39560c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ba7147d.css",
+    "static/js/main.9f39560c.js"
+  ]
+}
