@@ -1,0 +1,48 @@
+:root {
+    --blue: #0078ac;
+    --light-green: #c1d62e;
+    --red: #dd2e22;
+    --light-grey:#bbbbbb;
+    --grey: #676767;
+    --dark-grey:#191919;
+    --black:#000000;
+    --very-light-grey:#f6f6f6;
+    --bg-color: rgb(255, 255, 255);
+}
+
+.profile-form-container {
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: white;
+    /* background-color: var(--very-light-grey); */
+    /* box-shadow: 0 0 5px 1px var(--light-grey); */
+    box-shadow: 0 0 5px 1px var(--grey);
+}
+
+.profile-form-container p{
+    color: var(--grey);
+}
+
+.profile-form-container h5{
+    color: var(--dark-grey);
+}
+
+.wrap {
+    word-wrap: break-word; 
+}
+
+form button.submit-btn {
+    padding: 10px 20px;
+    background-color: var(--blue);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+form button.submit-btn:hover{
+    padding: 10px 20px;
+    background-color: var(--blue);
+    border-radius: 5px;
+}
