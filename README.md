@@ -1,5 +1,11 @@
 # Admin system for Immunizers
 
+``` 
+Consult-Aid Prototype Installation Guide
+1. Run 'npm install' in the project directory
+2. After installation, run 'npm run start'
+```
+
 ## 💡 Inspiration 💡
 VCH Vaccination Form Prototype for ThinkTech Case Competition ~ Thousands of VCH employees are vaccinated every year and BC Ministry of Health mandates that VCH keeps track of their employee's vaccination status
 
