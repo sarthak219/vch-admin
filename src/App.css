@@ -14,3 +14,15 @@ body {
     padding: 0;
     background-color: var(--blue);
 }
+
+.refresh-btn {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    z-index: 100;
+    right: 25px;
+}

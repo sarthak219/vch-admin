@@ -14,6 +14,7 @@ function useInput(initialValue, onChange) {
     
   return {
     value,
+    setValue,
     onChange: onChange ?? handleChange,
     isFocussed,
     onFocus:handleFocus,
