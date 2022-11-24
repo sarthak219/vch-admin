@@ -71,7 +71,7 @@ function ProfileForm({userData, onSubmit}) {
         setSite("");
         if(RRef.current.checked) RRef.current.checked = false;
         if(LRef.current.checked) LRef.current.checked = false;
-        if(consentRef.current.checked) consentRef.current.checked = false;
+        if(consentRef.current && consentRef.current.checked) consentRef.current.checked = false;
         setSelfReport(false);
     }
 
@@ -89,7 +89,18 @@ function ProfileForm({userData, onSubmit}) {
                     return(
                         <div key={index} className="col-md-4 col-6 wrap px-2">
                             <h5 className='mb-0 wrap'>{key}</h5>
-                            <p className=''>{userData[key]}</p>
+                            {key === "isVchEmployee" ? <>
+                                {userData[key] ?                                 
+                                    <p className=''>{"Yes"}</p> :
+                                    <p className=''>{"No"}</p>
+                                }
+                            </>
+                                :
+                                (key === "empCode") ? <>                
+                                        <p className=''>{"N/A"}</p>
+                                </>
+                                :
+                                <p className=''>{userData[key]}</p>}
                         </div>
                     )
                 })}
@@ -133,12 +144,13 @@ function ProfileForm({userData, onSubmit}) {
                         </fieldset>
                     </div>
                 </div>
+                {userData["isVchEmployee"] && 
                 <div className="form-check mb-4">
                     <input className="form-check-input" ref={consentRef} type="checkbox" id="selfReportConsent" {...selfReport} onChange={(e)=>{setSelfReport(e.target.checked)}}/>
                     <label className="form-check-label  " htmlFor="selfReportConsent">
                         <i className='text-muted'>Does the patient want to self report?</i>
                     </label>
-                </div>
+                </div> }
 
                 <div className='d-flex justify-content-center'>
                     <Button onClick={handleSubmit} className={"submit-btn mt-3"} type={"submit"} text="Submit"/>

@@ -3,7 +3,7 @@ import "./App.css"
 import SideMenu from "./components/sections/SideMenu";
 import ProfileForm from "./components/Forms/ProfileForm";
 import {db} from "./database/index.js";
-import { collection, getDocs, doc, deleteDoc , addDoc} from "firebase/firestore"
+import { collection, getDocs, doc, deleteDoc} from "firebase/firestore"
 import Button from "./components/elements/Button";
 
 
@@ -49,7 +49,6 @@ function App() {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const queueCollectionRef = collection(db, "queue")
-  const patientCollectionRef = collection(db, "patients")
 
   useEffect(()=>{
     fetchData();
@@ -76,6 +75,7 @@ function App() {
     } else {
       setFilteredData(null);
     }
+    // eslint-disable-next-line
   }, [data])
 
   async function pop() {
@@ -83,7 +83,7 @@ function App() {
         const id = data[0].id;
         const userDoc = doc(db, "queue", id);
         await deleteDoc(userDoc);
-      } else if(data.length == 1) {
+      } else if(data.length === 1) {
         const id = data.id;
         const userDoc = doc(db, "queue", id);
         await deleteDoc(userDoc);
