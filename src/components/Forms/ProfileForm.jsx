@@ -96,7 +96,7 @@ function ProfileForm({userData, onSubmit}) {
                                 }
                             </>
                                 :
-                                (key === "empCode") ? <>                
+                                (key === "empCode" && !userData["isVchEmployee"])  ? <>                
                                         <p className=''>{"N/A"}</p>
                                 </>
                                 :
