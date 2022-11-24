@@ -78,25 +78,21 @@ function App() {
     }
   }, [data])
 
-  function pop() {
-      const temp = data;
-      temp.shift();
-      setData([...temp]);
+  async function pop() {
       if(data[0]) {
         const id = data[0].id;
         const userDoc = doc(db, "queue", id);
-        deleteDoc(userDoc);
-        // console.log(userDoc);
+        await deleteDoc(userDoc);
+      } else if(data.length == 1) {
+        const id = data.id;
+        const userDoc = doc(db, "queue", id);
+        await deleteDoc(userDoc);
       }
   }
 
-  const handleFormSubmit = (formData) => {
-    postCurrPatient(formData);
-    pop();
-  }
-  const postCurrPatient = async (formData) => {
-    // make POST REQUEST
-     await addDoc(patientCollectionRef, formData);
+  const handleFormSubmit = async () => {
+    await pop();
+    await fetchData();
   }
 
 
